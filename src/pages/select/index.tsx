@@ -1,5 +1,8 @@
 import S from "./select.module.scss";
 
+import datas from "../../db/data.json";
+import Card from "../../components/Card/Card";
+
 const Select = () => {
     return (
         <div className={S.wrap}>
@@ -8,7 +11,17 @@ const Select = () => {
                 <p className={S.sub_title}>서브 타이틀</p>
             </header>
             <main className={S.main}>
-                <div className={S.list}></div>
+                <div className={S.list}>
+                    {datas.map((data) => {
+                        return (
+                            <Card
+                                symbol={data.symbol}
+                                store={data.store}
+                                menu={data.menu}
+                            ></Card>
+                        );
+                    })}
+                </div>
                 <div className={S.message}>메세지</div>
             </main>
             <footer className={S.footer}>

@@ -1,11 +1,19 @@
 import S from "./Card.module.scss";
 
-const Card = () => {
+type CardType = {
+    symbol: string;
+    store: string;
+    menu: string;
+};
+
+const Card = (props: CardType): JSX.Element => {
+    const { symbol, store, menu } = props;
+
     return (
         <div className={S.wrap}>
-            <figure className={S.image}></figure>
-            <h4 className={S.title}></h4>
-            <p className={S.text}></p>
+            <div className={S.symbol}>{symbol}</div>
+            <h4 className={S.store}>{store}</h4>
+            <p className={S.menu}>{menu}</p>
         </div>
     );
 };
