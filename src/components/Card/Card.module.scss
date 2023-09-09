@@ -7,6 +7,10 @@
     place-items: center;
     font-size: 100px;
     line-height: normal;
+
+    .active & {
+        background-color: red;
+    }
 }
 
 .store {
