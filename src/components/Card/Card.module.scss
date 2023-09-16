@@ -1,5 +1,20 @@
 .wrap {
+    display: grid;
+    place-content: center;
     text-align: center;
+    border-radius: 8px;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--text-light);
+        background-color: var(--secondary);
+    }
+
+    &.active {
+        color: var(--text-light);
+        background-color: var(--primary);
+    }
 }
 
 .symbol {
@@ -7,10 +22,6 @@
     place-items: center;
     font-size: 100px;
     line-height: normal;
-
-    .active & {
-        background-color: red;
-    }
 }
 
 .store {

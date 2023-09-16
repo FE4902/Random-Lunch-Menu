@@ -1,5 +1,11 @@
 :root {
     --text-black: #060b11;
-    --text-gray: rgba(#060b11, 0.48);
-    --text-light-gray: rgba(#060b11, 0.24);
+    --text-gray: #{rgba(#060b11, 0.48)};
+    --text-light-gray: #{rgba(#060b11, 0.24)};
+    --text-light: #f5f5f5;
+
+    --primary: #fe4902;
+    --secondary: #{rgba(#fe4902, 0.72)};
+    --white: #fff;
+    --black: #000;
 }

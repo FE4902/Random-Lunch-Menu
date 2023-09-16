@@ -13,14 +13,14 @@ const Card = (props: CardType): JSX.Element => {
     const [isActive, setIsActive] = useState(false);
 
     return (
-        <div
+        <button
             className={cns(S.wrap, isActive && S.active)}
             onClick={() => setIsActive(!isActive)}
         >
-            <div className={S.symbol}>{symbol}</div>
+            <div className={cns(S.symbol, "tossface")}>{symbol}</div>
             <h4 className={S.store}>{store}</h4>
             <p className={S.menu}>{menu}</p>
-        </div>
+        </button>
     );
 };
 
