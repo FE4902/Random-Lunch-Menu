@@ -1,11 +1,16 @@
-import Select from "./pages/select";
+import { Routes, Route } from "react-router-dom";
+
+import Select from "pages/select";
+import Rolling from "pages/rolling";
+
 import "./styles/global.scss";
 
 function App() {
     return (
-        <div style={{ position: "relative" }}>
-            <Select></Select>
-        </div>
+        <Routes>
+            <Route path="/" element={<Select/>}></Route>
+            <Route path="/rolling" element={<Rolling/>}></Route>
+        </Routes>
     );
 }
 
