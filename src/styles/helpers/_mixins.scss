@@ -1,0 +1,14 @@
+@use "sass:math";
+
+@function rem-convert($px) {
+    @return math.div($px, 16) * 1rem;
+}
+
+@mixin hover-shadow($color) {
+    transition: 0.3s;
+
+    &:hover {
+        box-shadow: 0 0 0 rem-convert(4) var(--color-white),
+            0 0 0 rem-convert(8) $color;
+    }
+}

@@ -1,34 +1,32 @@
+@use "styles/helpers" as *;
+
 .wrap {
     display: grid;
     place-content: center;
     text-align: center;
-    border-radius: 8px;
-    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-medium);
+    // aspect-ratio: 1 / 1;
     cursor: pointer;
-
-    &:hover {
-        color: var(--text-light);
-        background-color: var(--secondary);
-    }
+    @include hover-shadow(var(--color-primary));
 
     &.active {
-        color: var(--text-light);
-        background-color: var(--primary);
+        color: var(--color-light);
+        background-color: var(--color-primary);
     }
 }
 
 .symbol {
     display: grid;
     place-items: center;
-    font-size: 100px;
+    font-size: rem-convert(96);
     line-height: normal;
 }
 
 .store {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: rem-convert(20);
+    font-weight: var(--weight-bold);
 }
 
 .menu {
-    font-size: 16px;
+    font-size: rem-convert(16);
 }

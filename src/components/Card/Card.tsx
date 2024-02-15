@@ -1,14 +1,14 @@
+import { useState } from "react";
 import cns from "classnames";
-import { forwardRef, useState } from "react";
-import { DataType } from '../../types/types';
 
 import S from "./Card.module.scss";
+import { DataType } from "types/types";
 
-interface CardProps extends DataType{
+interface CardProps extends DataType {
     onClick: () => void;
-};
+}
 
-const Card = forwardRef<HTMLButtonElement, CardProps>((props, ref): JSX.Element => {
+const Card = (props: CardProps): JSX.Element => {
     const { symbol, store, menu, onClick } = props;
     const [isActive, setIsActive] = useState(false);
 
@@ -19,13 +19,12 @@ const Card = forwardRef<HTMLButtonElement, CardProps>((props, ref): JSX.Element 
                 setIsActive(!isActive);
                 onClick();
             }}
-            ref={ref}
         >
             <div className={cns(S.symbol, "tossface")}>{symbol}</div>
             <h4 className={S.store}>{store}</h4>
             <p className={S.menu}>{menu}</p>
         </button>
     );
-});
+};
 
 export default Card;
